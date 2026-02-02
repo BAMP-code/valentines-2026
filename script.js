@@ -59,10 +59,17 @@ window.addEventListener('DOMContentLoaded', () => {
     validateConfig();
 
     // Set texts from config
-    document.getElementById('valentineTitle').textContent = `${config.valentineName}, my love...`;
+    document.getElementById('valentineTitle').textContent = `${config.valentineName}, mi amor...`;
     
     // Set first question texts
     document.getElementById('question1Text').textContent = config.questions.first.text;
+
+    const imgElement1 = document.getElementById('question1Image');
+    if (config.questions.first.image) {
+        imgElement1.src = config.questions.first.image;
+        imgElement1.style.display = 'block'; 
+    }
+
     document.getElementById('yesBtn1').textContent = config.questions.first.yesBtn;
     document.getElementById('noBtn1').textContent = config.questions.first.noBtn;
     document.getElementById('secretAnswerBtn').textContent = config.questions.first.secretAnswer;
@@ -74,6 +81,13 @@ window.addEventListener('DOMContentLoaded', () => {
     
     // Set third question texts
     document.getElementById('question3Text').textContent = config.questions.third.text;
+
+    const imgElement3 = document.getElementById('question3Image');
+    if (config.questions.first.image) {
+        imgElement3.src = config.questions.third.image;
+        imgElement3.style.display = 'block'; 
+    }
+
     document.getElementById('yesBtn3').textContent = config.questions.third.yesBtn;
     document.getElementById('noBtn3').textContent = config.questions.third.noBtn;
 
